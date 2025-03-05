@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streaming Film - wattaFILM</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">wattaFILM</a></h1>
+    </header>
+    
+    <main class="stream-container">
+        <h2 id="movie-title">Judul Film</h2>
+        <video controls id="movie-player">
+            <source src="movie-sample.mp4" type="video/mp4">
+            Browser Anda tidak mendukung video ini.
+        </video>
+        
+        <p id="movie-description">Deskripsi singkat tentang film akan ditampilkan di sini.</p>
+        
+        <div class="download-buttons">
+            <h3>Download Film:</h3>
+            <a href="#" class="download-btn" data-res="360p">360p</a>
+            <a href="#" class="download-btn" data-res="480p">480p</a>
+            <a href="#" class="download-btn" data-res="720p">720p</a>
+            <a href="#" class="download-btn" data-res="1080p">1080p</a>
+        </div>
+    </main>
+    
+    <script src="stream.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wattaFILM</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <h1><a href="#">wattaFILM</a></h1>
+        <nav>
+            <div class="dropdown">
+                <a href="#">Genre</a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Animation</a></li>
+                    <li><a href="#">Drama</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="search-container">
+            <input type="text" id="searchBar" placeholder="Search...">
+            <button>Search</button>
+        </div>
+    </header>
+
+    <!-- Film Rekomendasi (Carousel) -->
+    <section class="recommendation" id="recommendationSection">
+        <div class="carousel">
+            <div class="carousel-track" id="carouselTrack">
+                <!-- Film akan dimasukkan dari script.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Film Baru -->
+    <div class="section-header">
+        <h2 class="section-title" id="newMoviesSection">Film Terbaru</h2>
+        <button class="see-all-btn" id="toggleButton" onclick="toggleSections()">Lihat Semua</button>
+    </div>
+    <div class="movie-container" id="movieContainer">
+        <!-- Film akan dimasukkan dari script.js -->
+    </div>
+
+    <script src="script.js"></script>
+    <script src="toggleSections.js"></script>
+</body>
+</html>
