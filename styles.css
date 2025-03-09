@@ -37,6 +37,11 @@ nav a {
     display: inline-block;
 }
 
+.dropdown a {
+    font-weight: bold;
+    font-size: 20px;
+}
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -44,9 +49,9 @@ nav a {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-  
 }
-.dropdown-content li{
+
+.dropdown-content li {
     list-style: none;
 }
 
@@ -59,7 +64,7 @@ nav a {
 
 .dropdown-content a:hover {
     background-color: #ffffff;
-    color:#e01a1a;
+    color: #e01a1a;
     border-radius: 5px;
 }
 
@@ -120,27 +125,54 @@ nav a {
     }
 }
 
+/* FILM REKOMENDASI (CAROUSEL) */
 .carousel-item {
-    min-width: 150px;
-    min-height: 200px;
+    width: 150px;
     margin: 10px;
     background-color: white;
     border-radius: 10px;
     overflow: hidden;
     flex-shrink: 0; /* Prevent items from shrinking */
+    display: flex;
+    flex-direction: column; /* Atur elemen anak secara vertikal */
+    align-items: center; /* Pusatkan elemen anak secara horizontal */
 }
 
 .carousel-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+    width: 100%; /* Pastikan gambar mengisi lebar kontainer */
+    height: auto; /* Pertahankan rasio aspek gambar */
+    border-bottom: 1px solid #ddd; /* Tambahkan garis bawah untuk memisahkan gambar dan judul */
 }
 
-.carousel-item h3 {
+/* FILM REKOMENDASI (CAROUSEL) */
+.carousel-item {
+    width: 150px;
+    margin: 10px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-shrink: 0; /* Prevent items from shrinking */
+    display: flex;
+    flex-direction: column; /* Atur elemen anak secara vertikal */
+    align-items: center; /* Pusatkan elemen anak secara horizontal */
+}
+
+.carousel-item img {
+    width: 100%; /* Pastikan gambar mengisi lebar kontainer */
+    height: auto; /* Pertahankan rasio aspek gambar */
+    border-bottom: 1px solid #ddd; /* Tambahkan garis bawah untuk memisahkan gambar dan judul */
+}
+
+.title-recom {
     text-align: center;
+    font-size: 15px;
     padding: 10px;
+    white-space: normal; /* Izinkan teks judul membungkus ke baris baru */
+    overflow: hidden; /* Sembunyikan teks yang meluap */
+    word-wrap: break-word; /* Izinkan pemutusan kata jika terlalu panjang */
+    margin: 0; /* Hilangkan margin default */
+    color: black; /* Pastikan warna teks terlihat */
 }
-
 /* FILM TERBARU */
 .section-title {
     text-align: center;
@@ -156,8 +188,8 @@ nav a {
 }
 
 .movie-card {
-    width: 150px;
-    height: 200px;
+    width: 150px; /* Atur lebar movie card */
+    height: 225px; /* Atur tinggi movie card */
     background-color: #333;
     color: white;
     border-radius: 8px;
@@ -165,6 +197,7 @@ nav a {
     text-align: center;
     cursor: pointer;
     transition: transform 0.3s ease;
+    position : relative;
 }
 
 .movie-card:hover {
@@ -172,13 +205,28 @@ nav a {
 }
 
 .movie-card img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
+    width: 150px;
+    height: auto;
+    object-fit: cover; /* Menyesuaikan gambar dengan kontainer */
 }
-
-.movie-card h3 {
-    padding: 10px;
+.rating {
+    top: 5px;
+    left: 5px;
+    background: transparent;
+    color: #fff;
+    padding: 3px 6px;
+    font-size: 12px;
+    border-radius: 4px;
+}
+.movie-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 5px 0;
+    color: #fff; /* Warna putih agar kontras */
+}
+.movie-genre {
+    font-size: 12px;
+    color: gray;
 }
 
 /* RESPONSIVE DESIGN */
@@ -285,4 +333,55 @@ nav a {
 
 .download-btn:hover {
     background-color: #000;
+}
+footer {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-title {
+    color: red;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.footer-text {
+    max-width: 400px;
+    font-size: 14px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li a {
+    color: red;
+    text-decoration: none;
+}
+
+hr {
+    border: 0.5px solid gray;
+    margin: 20px 0;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 12px;
+}
+
+.footer-bottom a {
+    color: white;
+    margin-right: 10px;
+    text-decoration: none;
 }
