@@ -9,20 +9,22 @@
 <body>
     <!-- Navbar -->
     <header>
-        <h1><a href="#">wattaFILM</a></h1>
+        <h1><a href="index.html">wattaFILM</a></h1>
         <nav>
+            <a href="#newFilm">Film Baru</a>
             <div class="dropdown">
                 <a href="#">Genre</a>
                 <ul class="dropdown-content">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Animation</a></li>
-                    <li><a href="#">Drama</a></li>
+                    <li onclick="filterByGenre('Action')">Action</li>
+                    <li li onclick="filterByGenre('Animation')">Animation</li>
+                    <li li onclick="filterByGenre('Drama')">Drama</li>
+                    <li li onclick="filterByGenre('Horror')">Horror</li>
                 </ul>
             </div>
         </nav>
         <div class="search-container">
             <input type="text" id="searchBar" placeholder="Search...">
-            <button>Search</button>
+            <button onclick="searchMovies(), toggleSections()">Search</button>
         </div>
     </header>
 
@@ -37,124 +39,185 @@
                 </div>
                 <div class="carousel-item">
                     <img src="/assets/poster/Paddington in Peru.jpg" alt="Film 2" onclick="goToStream('2')">
-                    <h3 class="title-recom">Paddington in peru (2025)</h3>
+                    <h3 class="title-recom">Paddington in peru (2024)</h3>
                 </div>
                 <div class="carousel-item">
                     <img src="/assets/poster/insideout2.jpg" alt="Film 3" onclick="goToStream('3')">
-                    <h3 class="title-recom">Film 3</h3>
+                    <h3 class="title-recom">Inside Out2 (2024)</h3>
                 </div>
                 <div class="carousel-item">
                     <img src="/assets/poster/SUMALA.jpg" alt="Film 4" onclick="goToStream('4')">
-                    <h3 class="title-recom">Film 4</h3>
+                    <h3 class="title-recom">SUMALA (2024)</h3>
                 </div>
                 <div class="carousel-item">
                     <img src="/assets/poster/Ambyar Mak byar.jpg" alt="Film 5" onclick="goToStream('5')">
-                    <h3 class="title-recom">Film 5</h3>
-                </div>
-                <div class="carousel-item">
-                    <img src="/assets/poster/MAMA.jpg" alt="Film 6" onclick="goToStream('6')">
-                    <h3 class="title-recom">Film 6</h3>
-                </div>
-                <div class="carousel-item">
-                    <img src="/assets/poster/SUMALA.jpg" alt="Film 7" onclick="goToStream('7')">
-                    <h3 class="title-recom">Film 7</h3>
-                </div>
-                <div class="carousel-item">
-                    <img src="/assets/poster/Utusan iblis.jpg" alt="Film 8" onclick="goToStream('8')">
-                    <h3 class="title-recom">Film 8</h3>
-                </div>
-                <div class="carousel-item">
-                    <img src="/assets/poster/moana2.jpeg" alt="Film 9" onclick="goToStream('9')">
-                    <h3 class="title-recom">Film 9</h3>
-                </div>
-                <div class="carousel-item">
-                    <img src="path/to/image10.jpg" alt="Film 10" onclick="goToStream('10')">
-                    <h3 class="title-recom">Film 10</h3>
+                    <h3 class="title-recom">Ambyar Mak Byar (2025)</h3>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Film Baru -->
-    <div class="section-header">
-        <h2 class="section-title" id="newMoviesSection">Film Terbaru</h2>
-        <button class="see-all-btn" id="toggleButton" onclick="toggleSections()">Lihat Semua</button>
-    </div>
-    <div class="movie-container" id="movieContainer">
-        <!-- Film akan dimasukkan dari script.js -->
-        <div class="movie-card">
-            <div class="rating">
-                ⭐ 6.2 <span>⏳ 119 min</span>
+    <section id="newFilm">
+        <div class="section-header">
+            <h2 class="section-title" id="newMoviesSection">Film Terbaru</h2>
+            <button class="see-all-btn" id="toggleButton" onclick="toggleSections()">Lihat Semua</button>
+        </div>
+        <div class="movie-container" id="movieContainer">
+            <!-- Film akan dimasukkan dari script.js -->
+            <div class="movie-card">
+                <div class="rating">
+                    ⭐ 6.2 <span>⏳ 119 min</span>
+                </div>
+                <img src="./assets/poster/captain.jpg" alt="New Movie 1" onclick="goToStream('1')">
+                <div class="movie-info">
+                    <h3 class="movie-title">Captain America: Brave New World (2025)</h3>
+                    <p class="genre">Action, Science Fiction, Thriller, USA</p>
+                </div>
             </div>
-            <img src="./assets/poster/captain.jpg" alt="New Movie 1" onclick="goToStream('1')">
-            <div class="movie-info">
-                <h3 class="movie-title">Captain America: Brave New World (2025)</h3>
-                <p class="genre">Action, Science Fiction, Thriller, USA</p>
+            <div class="movie-card">
+                <div class="rating">
+                    ⭐ 6.2 <span>⏳ 119 min</span>
+                </div>
+                <img src="/assets/poster/Almarhum.jpg" alt="New Movie 2" onclick="goToStream('2')">
+                <div class="movie-info">
+                <h3 class="movie-title">Almarhum (2025)</h3>
+                <P class="genre">Horor, Indonesia</P>
+                </div>
+            </div>
+            <div class="movie-card">
+                <div class="rating">
+                    ⭐ 6.2 <span>⏳ 119 min</span>
+                </div>
+                <img src="/assets/poster/Ambyar Mak byar.jpg" alt="New Movie 3" onclick="goToStream('3')">
+                <div class="movie-info">
+                <h3 class="movie-title">Ambyar Mak Byar (2025)</h3>
+                <p class="genre">Comedy, Indonesia</p>
+                </div>
+            </div>
+            <div class="movie-card">
+                <div class="rating">
+                    ⭐ 6.2 <span>⏳ 119 min</span>
+                </div>
+                <img src="/assets/poster/insideout2.jpg" alt="New Movie 4" onclick="goToStream('4')">
+                <div class="movie-info">
+                <h3 class="movie-title">Inside Out2 (2024)</h3>
+                <p class="genre">Animation, Anak-Anak, USA</p>
+                </div>
+            </div>
+            <div class="movie-card">
+                <div class="rating">
+                    ⭐ 6.2 <span>⏳ 119 min</span>
+                </div>
+                <img src="/assets/poster/MAMA.jpg" alt="New Movie 5" onclick="goToStream('5')">
+                <div class="movie-info">
+                <h3 class="movie-title">MAMA (2025)</h3>
+                <p class="genre">Horor, Indonesia</p>
+                </div>
+            </div>
+            <div class="movie-card">
+                <div class="rating">
+                    ⭐ 6.2 <span>⏳ 119 min</span>
+                </div>
+                <img src="/assets/poster/moana2.jpeg" alt="New Movie 6" onclick="goToStream('6')">
+                <div class="movie-info">
+                <h3 class="movie-title">Moana2 (2024)</h3>
+                <p class="genre">Animation, USA</p>
+                </div>
+            </div>
+            <div class="movie-card">
+                <div class="rating">
+                    ⭐ 6.2 <span>⏳ 119 min</span>
+                </div>
+                <img src="/assets/poster/Paddington in Peru.jpg" alt="New Movie 7" onclick="goToStream('7')">
+                <div class="movie-info">
+                    <h3 class="movie-title">Paddington In Peru (2024)</h3>
+                    <p class="genre">Animation, prancis</p>
+                </div>
+            
+            </div>
+            <div class="movie-card">
+                <div class="rating">
+                    ⭐ 6.2 <span>⏳ 119 min</span>
+                </div>
+                <img src="/assets/poster/SUMALA.jpg" alt="New Movie 8" onclick="goToStream('8')">
+                <div class="movie-info">
+                <h3 class="movie-title">SUMALA (2024)</h3>
+                <p class="genre">Horor, Indonesia</p>
+                </div>
+            </div>
+            <div class="movie-card">
+                <div class="rating">
+                    ⭐ 6.2 <span>⏳ 119 min</span>
+                </div>
+                <img src="/assets/poster/Utusan iblis.jpg" alt="New Movie 9" onclick="goToStream('9')">
+                <div class="movie-info">
+                <h3 class="movie-title">Utusan Iblis (2025)</h3>
+                <p class="genre">Horor, Indonesia</p>
+                </div>
+            </div>
+            <div class="movie-card">
+                <div class="rating">
+                    ⭐ 6.2 <span>⏳ 119 min</span>
+                </div>
+                <img src="path/to/new_movie10.jpg" alt="New Movie 10" onclick="goToStream('10')">
+                <div class="movie-info">
+                <h3 class="movie-title">New Movie 10</h3>
+                </div>
+            </div>
+            <div class="movie-card">
+                <div class="rating">
+                    ⭐ 6.2 <span>⏳ 119 min</span>
+                </div>
+                <img src="path/to/new_movie11.jpg" alt="New Movie 11" onclick="goToStream('11')">
+                <div class="movie-info">
+                <h3 class="movie-title">New Movie 11</h3>
+                </div>
+            </div>
+            <div class="movie-card">
+                <div class="rating">
+                    ⭐ 6.2 <span>⏳ 119 min</span>
+                </div>
+                <img src="path/to/new_movie12.jpg" alt="New Movie 12" onclick="goToStream('12')">
+                <div class="movie-info">
+                <h3 class="movie-title">New Movie 12</h3>
+                </div>
+            </div>
+            <div class="movie-card">
+                <div class="rating">
+                    ⭐ 6.2 <span>⏳ 119 min</span>
+                </div>
+                <img src="path/to/new_movie13.jpg" alt="New Movie 13" onclick="goToStream('13')">
+                <div class="movie-info">
+                <h3 class="movie-title">New Movie 13</h3>
+                </div>
+            </div>
+            <div class="movie-card">
+                <div class="rating">
+                    ⭐ 6.2 <span>⏳ 119 min</span>
+                </div>
+                <img src="path/to/new_movie14.jpg" alt="New Movie 14" onclick="goToStream('14')">
+                <div class="movie-info">
+                <h3 class="movie-title">New Movie 14</h3>
+                </div>  
+            </div>
+            <div class="movie-card">
+                <div class="rating">
+                    ⭐ 6.2 <span>⏳ 119 min</span>
+                </div>
+                <img src="path/to/new_movie15.jpg" alt="New Movie 15" onclick="goToStream('15')">
+                <div class="movie-info">
+                <h3 class="movie-title">New Movie 15</h3>
+                </div>
             </div>
         </div>
-        <div class="movie-card">
-            <img src="/assets/poster/Almarhum.jpg" alt="New Movie 2" onclick="goToStream('2')">
-            <h3>New Movie 2</h3>
-        </div>
-        <div class="movie-card">
-            <img src="/assets/poster/Ambyar Mak byar.jpg" alt="New Movie 3" onclick="goToStream('3')">
-            <h3>New Movie 3</h3>
-        </div>
-        <div class="movie-card">
-            <img src="/assets/poster/insideout2.jpg" alt="New Movie 4" onclick="goToStream('4')">
-            <h3>New Movie 4</h3>
-        </div>
-        <div class="movie-card">
-            <img src="/assets/poster/MAMA.jpg" alt="New Movie 5" onclick="goToStream('5')">
-            <h3>New Movie 5</h3>
-        </div>
-        <div class="movie-card">
-            <img src="/assets/poster/moana2.jpeg" alt="New Movie 6" onclick="goToStream('6')">
-            <h3>New Movie 6</h3>
-        </div>
-        <div class="movie-card">
-            <img src="/assets/poster/Paddington in Peru.jpg" alt="New Movie 7" onclick="goToStream('7')">
-            <h3>New Movie 7</h3>
-        </div>
-        <div class="movie-card">
-            <img src="/assets/poster/SUMALA.jpg" alt="New Movie 8" onclick="goToStream('8')">
-            <h3>New Movie 8</h3>
-        </div>
-        <div class="movie-card">
-            <img src="/assets/poster/Utusan iblis.jpg" alt="New Movie 9" onclick="goToStream('9')">
-            <h3>New Movie 9</h3>
-        </div>
-        <div class="movie-card">
-            <img src="path/to/new_movie10.jpg" alt="New Movie 10" onclick="goToStream('10')">
-            <h3>New Movie 10</h3>
-        </div>
-        <div class="movie-card">
-            <img src="path/to/new_movie11.jpg" alt="New Movie 11" onclick="goToStream('11')">
-            <h3>New Movie 11</h3>
-        </div>
-        <div class="movie-card">
-            <img src="path/to/new_movie12.jpg" alt="New Movie 12" onclick="goToStream('12')">
-            <h3>New Movie 12</h3>
-        </div>
-        <div class="movie-card">
-            <img src="path/to/new_movie13.jpg" alt="New Movie 13" onclick="goToStream('13')">
-            <h3>New Movie 13</h3>
-        </div>
-        <div class="movie-card">
-            <img src="path/to/new_movie14.jpg" alt="New Movie 14" onclick="goToStream('14')">
-            <h3>New Movie 14</h3>
-        </div>
-        <div class="movie-card">
-            <img src="path/to/new_movie15.jpg" alt="New Movie 15" onclick="goToStream('15')">
-            <h3>New Movie 15</h3>
-        </div>
-    </div>
+    </section>
     <footer>
         <div class="footer-container">
             <div>
-                <h2 class="footer-title">IDLIX</h2>
+                <h2 class="footer-title">wattaFILM</h2>
                 <p class="footer-text">
-                    IDLIX adalah platform streaming film, series, anime, drakor subtitle Indonesia nomor 1 di Indonesia dan menyediakan kualitas terbaik yang ada di pasaran Indonesia secara gratis.
+                    wattaFILM adalah platform streaming film, series, anime, drakor subtitle Indonesia nomor 1 di Indonesia dan menyediakan kualitas terbaik yang ada di pasaran Indonesia secara gratis.
                 </p>
             </div>
             <div>
@@ -174,7 +237,7 @@
                     <li><a href="#">Action</a></li>
                     <li><a href="#">Adventure</a></li>
                     <li><a href="#">Animation</a></li>
-                    <li><a href="#">Drama</a></li>
+                    <li><a href="#">Horror</a></li>
                 </ul>
             </div>
             <div>
@@ -191,7 +254,7 @@
         </div>
         <hr>
         <div class="footer-bottom">
-            <p>Copyright &copy; 2024 by IDLIX. All Rights Reserved.</p>
+            <p>Copyright &copy; 2025 by wattaFILM. All Rights Reserved.</p>
             <p>
                 <a href="#">Bantuan</a> |
                 <a href="#">DMCA</a> |

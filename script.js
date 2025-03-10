@@ -1,33 +1,34 @@
 document.addEventListener('DOMContentLoaded', function() {
     const carouselTrack = document.getElementById('carouselTrack');
-    const carouselItems = Array.from(carouselTrack.children);
+    let carouselItems = Array.from(carouselTrack.children);
 
-    function cloneItems() {
-        carouselItems.forEach(item => {
-            const clone = item.cloneNode(true);
-            carouselTrack.appendChild(clone);
-        });
+    function cloneItemsContinuously() {
+        setInterval(() => {
+            carouselItems.forEach(item => {
+                const clone = item.cloneNode(true); // Kloning elemen gambar
+                carouselTrack.appendChild(clone); // Tambahkan ke dalam track
+            });
+            carouselItems = Array.from(carouselTrack.children); // Perbarui daftar elemen
+        }); // Setiap 3 detik elemen baru dikloning
     }
 
     function startInfiniteScroll() {
         let scrollAmount = 0;
-        const scrollStep = 1; // Adjust this value to control the scroll speed
-        const maxScroll = carouselTrack.scrollWidth / 2;
+        const scrollStep = 1; // Kecepatan scroll
 
         function scroll() {
             scrollAmount += scrollStep;
-            if (scrollAmount >= maxScroll) {
-                scrollAmount = 0;
+            if (scrollAmount >= carouselTrack.scrollWidth / 2) {
+                scrollAmount = 0; // Reset jika sudah melewati setengah dari lebar track
             }
-            carouselTrack.scrollTo(scrollAmount, 0);
-            requestAnimationFrame(scroll);
+            carouselTrack.scrollLeft = scrollAmount;
+            requestAnimationFrame(scroll); // Loop animasi
         }
-
         scroll();
     }
 
-    cloneItems();
-    startInfiniteScroll();
+    cloneItemsContinuously(); // Mulai cloning berulang
+    startInfiniteScroll(); // Mulai animasi scroll
 });
 
 // Fungsi untuk menampilkan atau menyembunyikan bagian rekomendasi film
@@ -53,12 +54,47 @@ function toggleSections() {
     }
 }
 
-// Jalankan fungsi saat halaman dimuat
-window.onload = () => {
-    displayRecommendedMovies();
-    displayMovies();
-};
+
 // Fungsi untuk menuju halaman streaming
 function goToStream(movieId) {
     window.location.href = `stream.html?movieId=${movieId}`;
+}
+
+// Fungsi untuk mencari film
+function searchMovies() {
+    const searchBar = document.getElementById('searchBar');
+    const searchTerm = searchBar.value.toLowerCase();
+    const movieContainer = document.getElementById('movieContainer');
+    const movieCards = Array.from(movieContainer.getElementsByClassName('movie-card'));
+
+    movieCards.forEach(card => {
+        const title = card.getElementsByTagName('h3')[0].textContent.toLowerCase();
+        if (title.includes(searchTerm)) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
+function filterByGenre(genre) {
+    const movieContainer = document.getElementById('movieContainer');
+    const movieCards = Array.from(movieContainer.getElementsByClassName('movie-card'));
+    const recommendationSection = document.getElementById('recommendationSection');
+
+    // Sembunyikan bagian rekomendasi saat filter aktif
+    recommendationSection.style.display = 'none';
+
+    movieCards.forEach(card => {
+        const cardGenre = card.getAttribute('data-genre');
+        if (cardGenre.includes(genre)) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+
+    movieCards.forEach(card => {
+        card.style.display = 'block';
+    });
 }

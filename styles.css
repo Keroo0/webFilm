@@ -29,6 +29,7 @@ nav {
 nav a {
     color: white;
     text-decoration: none;
+    font-weight: bold;
     margin: 0 10px;
 }
 
@@ -140,26 +141,7 @@ nav a {
 
 .carousel-item img {
     width: 100%; /* Pastikan gambar mengisi lebar kontainer */
-    height: auto; /* Pertahankan rasio aspek gambar */
-    border-bottom: 1px solid #ddd; /* Tambahkan garis bawah untuk memisahkan gambar dan judul */
-}
-
-/* FILM REKOMENDASI (CAROUSEL) */
-.carousel-item {
-    width: 150px;
-    margin: 10px;
-    background-color: white;
-    border-radius: 10px;
-    overflow: hidden;
-    flex-shrink: 0; /* Prevent items from shrinking */
-    display: flex;
-    flex-direction: column; /* Atur elemen anak secara vertikal */
-    align-items: center; /* Pusatkan elemen anak secara horizontal */
-}
-
-.carousel-item img {
-    width: 100%; /* Pastikan gambar mengisi lebar kontainer */
-    height: auto; /* Pertahankan rasio aspek gambar */
+    height: 80%; /* Pertahankan rasio aspek gambar */
     border-bottom: 1px solid #ddd; /* Tambahkan garis bawah untuk memisahkan gambar dan judul */
 }
 
@@ -189,7 +171,7 @@ nav a {
 
 .movie-card {
     width: 150px; /* Atur lebar movie card */
-    height: 225px; /* Atur tinggi movie card */
+    height: 320px; /* Atur tinggi movie card */
     background-color: #333;
     color: white;
     border-radius: 8px;
@@ -206,7 +188,7 @@ nav a {
 
 .movie-card img {
     width: 150px;
-    height: auto;
+    height: 60%;
     object-fit: cover; /* Menyesuaikan gambar dengan kontainer */
 }
 .rating {
