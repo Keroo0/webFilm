@@ -7,85 +7,107 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Navbar -->
     <header>
         <h1><a href="index.html">wattaFILM</a></h1>
         <nav>
+            <a href="#newFilm">Film Baru</a>
             <div class="dropdown">
                 <a href="#">Genre</a>
-                <ul class="dropdown-content">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Animation</a></li>
-                    <li><a href="#">Drama</a></li>
+                <ul class="dropdown-content" id="genreList">
+                    <li onclick="filterByGenre('all')">Semua Genre</li>
+                    <li onclick="filterByGenre('action')">Action</li>
+                    <li onclick="filterByGenre('science fiction')">Science Fiction</li>
+                    <li onclick="filterByGenre('thriller')">Thriller</li>
+                    <li onclick="filterByGenre('horor')">Horor</li>
+                    <li onclick="filterByGenre('comedy')">Comedy</li>
+                    <li onclick="filterByGenre('animation')">Animation</li>
+                    <li onclick="filterByGenre('anak-anak')">Anak-Anak</li>
+                    <li onclick="filterByGenre('indonesia')">Indonesia</li>
+                    <li onclick="filterByGenre('usa')">USA</li>
+                    <li onclick="filterByGenre('prancis')">Prancis</li>
                 </ul>
             </div>
         </nav>
         <div class="search-container">
             <input type="text" id="searchBar" placeholder="Search...">
-            <button>Search</button>
+            <button onclick="searchMovies(), toggleSections()">Search</button>
         </div>
     </header>
-    
+
+    <!-- Konten Streaming -->
     <main class="stream-container">
-        <h2 id="movie-title">Judul Film</h2>
+       
         <video controls id="movie-player" style="width: 100%; max-width: 600px; display: block; margin: 20px auto;">
             <source src="" type="video/mp4">
-            Browser Anda tidak mendukung video ini.
+            Browser Anda tidak mendukung pemutaran video.
         </video>
+
+        <img id="movie-poster" src="assets/default-poster.jpg" alt="Poster Film">
+        <h2 id="movie-title">Memuat Film...</h2>
+       
+        <p id="movie-genre"></p>
         
-        <p id="movie-description">Deskripsi singkat tentang film akan ditampilkan di sini.</p>
+        <p id="movie-description">Deskripsi film akan ditampilkan di sini.</p>
         
         <div class="download-buttons">
             <h3>Download Film:</h3>
-            <a href="#" class="download-btn" data-res="360p">360p</a>
-            <a href="#" class="download-btn" data-res="480p">480p</a>
-            <a href="#" class="download-btn" data-res="720p">720p</a>
-            <a href="#" class="download-btn" data-res="1080p">1080p</a>
+            <a href="#" id="download-360p" class="download-btn" target="_blank">360p</a>
+            <a href="#" id="download-480p" class="download-btn" target="_blank">480p</a>
+            <a href="#" id="download-720p" class="download-btn" target="_blank">720p</a>
+            <a href="#" id="download-1080p" class="download-btn" target="_blank">1080p</a>
         </div>
     </main>
 
     <footer>
         <div class="footer-container">
             <div>
-                <h2 class="footer-title">IDLIX</h2>
+                <h2 class="footer-title">wattaFILM</h2>
                 <p class="footer-text">
-                    IDLIX adalah platform streaming film, series, anime, drakor subtitle Indonesia nomor 1 di Indonesia dan menyediakan kualitas terbaik yang ada di pasaran Indonesia secara gratis.
+                    wattaFILM adalah platform streaming film, series, anime, drakor subtitle Indonesia nomor 1 di Indonesia dan menyediakan kualitas terbaik yang ada di pasaran Indonesia secara gratis.
                 </p>
             </div>
             <div>
                 <h3>Original Series</h3>
                 <ul>
-                    <li><a href="#">Apple TV+</a></li>
-                    <li><a href="#">Amazon</a></li>
-                    <li><a href="#">Disney+</a></li>
-                    <li><a href="#">HBO</a></li>
-                    <li><a href="#">Netflix</a></li>
-                    <li><a href="#">The CW</a></li>
+                    <li><a href="https://tv.apple.com/" target="_blank">Apple TV+</a></li>
+                    <li><a href="https://www.amazon.com/" target="_blank">Amazon</a></li>
+                    <li><a href="https://www.disneyplus.com/" target="_blank">Disney+</a></li>
+                    <li><a href="https://www.hbo.com/" target="_blank">HBO</a></li>
+                    <li><a href="https://www.netflix.com/" target="_blank">Netflix</a></li>
+                    <li><a href="https://www.cwtv.com/" target="_blank">The CW</a></li>
                 </ul>
             </div>
             <div>
                 <h3>Genre</h3>
                 <ul>
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Adventure</a></li>
-                    <li><a href="#">Animation</a></li>
-                    <li><a href="#">Drama</a></li>
+                    <li><a href="#" onclick="filterByGenre('Action')">Action</a></li>
+                    <li><a href="#" onclick="filterByGenre('Science Fiction')">Science Fiction</a></li>
+                    <li><a href="#" onclick="filterByGenre('Thriller')">Thriller</a></li>
+                    <li><a href="#" onclick="filterByGenre('Horror')">Horror</a></li>
+                    <li><a href="#" onclick="filterByGenre('Comedy')">Comedy</a></li>
+                    <li><a href="#" onclick="filterByGenre('Animation')">Animation</a></li>
+                    <li><a href="#" onclick="filterByGenre('Anak-Anak')">Anak-Anak</a></li>
+                    <li><a href="#" onclick="filterByGenre('Indonesia')">Indonesia</a></li>
+                    <li><a href="#" onclick="filterByGenre('USA')">USA</a></li>
+                    <li><a href="#" onclick="filterByGenre('Prancis')">Prancis</a></li>
                 </ul>
             </div>
             <div>
                 <h3>wattaFILM</h3>
                 <ul>
-                    <li><a href="#">DCEU Movie</a></li>
-                    <li><a href="#">MCU Movie</a></li>
-                    <li><a href="#">Disney+ Movie and Series</a></li>
-                    <li><a href="#">Netflix Movie and Series</a></li>
-                    <li><a href="#">Marvel Studios Series</a></li>
+                    <li><a href="https://www.dc.com/movies" target="_blank">DCEU Movie</a></li>
+                    <li><a href="https://www.marvel.com/movies" target="_blank">MCU Movie</a></li>
+                    <li><a href="https://www.disneyplus.com/" target="_blank">Disney+ Movie and Series</a></li>
+                    <li><a href="https://www.netflix.com/" target="_blank">Netflix Movie and Series</a></li>
+                    <li><a href="https://www.marvel.com/tv-shows" target="_blank">Marvel Studios Series</a></li>
                     <li><a href="#">Coming Soon</a></li>
                 </ul>
             </div>
         </div>
         <hr>
         <div class="footer-bottom">
-            <p>&copy; 2024 by IDLIX. All Rights Reserved.</p>
+            <p>Copyright &copy; 2025 by wattaFILM. All Rights Reserved.</p>
             <p>
                 <a href="#">Bantuan</a> |
                 <a href="#">DMCA</a> |
@@ -96,7 +118,7 @@
             </p>
         </div>
     </footer>
-    
+
     <script src="stream.js"></script>
 </body>
 </html>

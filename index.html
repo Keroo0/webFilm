@@ -14,11 +14,18 @@
             <a href="#newFilm">Film Baru</a>
             <div class="dropdown">
                 <a href="#">Genre</a>
-                <ul class="dropdown-content">
-                    <li onclick="filterByGenre('Action')">Action</li>
-                    <li li onclick="filterByGenre('Animation')">Animation</li>
-                    <li li onclick="filterByGenre('Drama')">Drama</li>
-                    <li li onclick="filterByGenre('Horror')">Horror</li>
+                <ul class="dropdown-content" id="genreList">
+                    <li onclick="filterByGenre('all')">Semua Genre</li>
+                    <li onclick="filterByGenre('action')">Action</li>
+                    <li onclick="filterByGenre('science fiction')">Science Fiction</li>
+                    <li onclick="filterByGenre('thriller')">Thriller</li>
+                    <li onclick="filterByGenre('horor')">Horor</li>
+                    <li onclick="filterByGenre('comedy')">Comedy</li>
+                    <li onclick="filterByGenre('animation')">Animation</li>
+                    <li onclick="filterByGenre('anak-anak')">Anak-Anak</li>
+                    <li onclick="filterByGenre('indonesia')">Indonesia</li>
+                    <li onclick="filterByGenre('usa')">USA</li>
+                    <li onclick="filterByGenre('prancis')">Prancis</li>
                 </ul>
             </div>
         </nav>
@@ -64,152 +71,115 @@
             <button class="see-all-btn" id="toggleButton" onclick="toggleSections()">Lihat Semua</button>
         </div>
         <div class="movie-container" id="movieContainer">
-            <!-- Film akan dimasukkan dari script.js -->
-            <div class="movie-card">
-                <div class="rating">
-                    ⭐ 6.2 <span>⏳ 119 min</span>
-                </div>
+            <div class="movie-card" data-genre="action science fiction thriller usa">
+                <div class="rating">⭐ 6.2 <span>⏳ 119 min</span></div>
                 <img src="./assets/poster/captain.jpg" alt="New Movie 1" onclick="goToStream('1')">
                 <div class="movie-info">
                     <h3 class="movie-title">Captain America: Brave New World (2025)</h3>
-                    <p class="genre">Action, Science Fiction, Thriller, USA</p>
+                    <p class="genre">
+                        <span onclick="filterByGenre('action')">Action</span>, 
+                        <span onclick="filterByGenre('science fiction')">Science Fiction</span>, 
+                        <span onclick="filterByGenre('thriller')">Thriller</span>, 
+                        <span onclick="filterByGenre('usa')">USA</span>
+                    </p>
                 </div>
             </div>
-            <div class="movie-card">
-                <div class="rating">
-                    ⭐ 6.2 <span>⏳ 119 min</span>
-                </div>
+        
+            <div class="movie-card" data-genre="horor indonesia">
+                <div class="rating">⭐ 6.2 <span>⏳ 119 min</span></div>
                 <img src="/assets/poster/Almarhum.jpg" alt="New Movie 2" onclick="goToStream('2')">
                 <div class="movie-info">
-                <h3 class="movie-title">Almarhum (2025)</h3>
-                <P class="genre">Horor, Indonesia</P>
+                    <h3 class="movie-title">Almarhum (2025)</h3>
+                    <p class="genre">
+                        <span onclick="filterByGenre('horor')">Horor</span>, 
+                        <span onclick="filterByGenre('indonesia')">Indonesia</span>
+                    </p>
                 </div>
             </div>
-            <div class="movie-card">
-                <div class="rating">
-                    ⭐ 6.2 <span>⏳ 119 min</span>
-                </div>
+        
+            <div class="movie-card" data-genre="comedy indonesia">
+                <div class="rating">⭐ 6.2 <span>⏳ 119 min</span></div>
                 <img src="/assets/poster/Ambyar Mak byar.jpg" alt="New Movie 3" onclick="goToStream('3')">
                 <div class="movie-info">
-                <h3 class="movie-title">Ambyar Mak Byar (2025)</h3>
-                <p class="genre">Comedy, Indonesia</p>
+                    <h3 class="movie-title">Ambyar Mak Byar (2025)</h3>
+                    <p class="genre">
+                        <span onclick="filterByGenre('comedy')">Comedy</span>, 
+                        <span onclick="filterByGenre('indonesia')">Indonesia</span>
+                    </p>
                 </div>
             </div>
-            <div class="movie-card">
-                <div class="rating">
-                    ⭐ 6.2 <span>⏳ 119 min</span>
-                </div>
+        
+            <div class="movie-card" data-genre="animation anak-anak usa">
+                <div class="rating">⭐ 6.2 <span>⏳ 119 min</span></div>
                 <img src="/assets/poster/insideout2.jpg" alt="New Movie 4" onclick="goToStream('4')">
                 <div class="movie-info">
-                <h3 class="movie-title">Inside Out2 (2024)</h3>
-                <p class="genre">Animation, Anak-Anak, USA</p>
+                    <h3 class="movie-title">Inside Out 2 (2024)</h3>
+                    <p class="genre">
+                        <span onclick="filterByGenre('animation')">Animation</span>, 
+                        <span onclick="filterByGenre('anak-anak')">Anak-Anak</span>, 
+                        <span onclick="filterByGenre('usa')">USA</span>
+                    </p>
                 </div>
             </div>
-            <div class="movie-card">
-                <div class="rating">
-                    ⭐ 6.2 <span>⏳ 119 min</span>
-                </div>
+        
+            <div class="movie-card" data-genre="horor indonesia">
+                <div class="rating">⭐ 6.2 <span>⏳ 119 min</span></div>
                 <img src="/assets/poster/MAMA.jpg" alt="New Movie 5" onclick="goToStream('5')">
                 <div class="movie-info">
-                <h3 class="movie-title">MAMA (2025)</h3>
-                <p class="genre">Horor, Indonesia</p>
+                    <h3 class="movie-title">MAMA (2025)</h3>
+                    <p class="genre">
+                        <span onclick="filterByGenre('horor')">Horor</span>, 
+                        <span onclick="filterByGenre('indonesia')">Indonesia</span>
+                    </p>
                 </div>
             </div>
-            <div class="movie-card">
-                <div class="rating">
-                    ⭐ 6.2 <span>⏳ 119 min</span>
-                </div>
+        
+            <div class="movie-card" data-genre="animation usa">
+                <div class="rating">⭐ 6.2 <span>⏳ 119 min</span></div>
                 <img src="/assets/poster/moana2.jpeg" alt="New Movie 6" onclick="goToStream('6')">
                 <div class="movie-info">
-                <h3 class="movie-title">Moana2 (2024)</h3>
-                <p class="genre">Animation, USA</p>
+                    <h3 class="movie-title">Moana 2 (2024)</h3>
+                    <p class="genre">
+                        <span onclick="filterByGenre('animation')">Animation</span>, 
+                        <span onclick="filterByGenre('usa')">USA</span>
+                    </p>
                 </div>
             </div>
-            <div class="movie-card">
-                <div class="rating">
-                    ⭐ 6.2 <span>⏳ 119 min</span>
-                </div>
+        
+            <div class="movie-card" data-genre="animation prancis">
+                <div class="rating">⭐ 6.2 <span>⏳ 119 min</span></div>
                 <img src="/assets/poster/Paddington in Peru.jpg" alt="New Movie 7" onclick="goToStream('7')">
                 <div class="movie-info">
                     <h3 class="movie-title">Paddington In Peru (2024)</h3>
-                    <p class="genre">Animation, prancis</p>
+                    <p class="genre">
+                        <span onclick="filterByGenre('animation')">Animation</span>, 
+                        <span onclick="filterByGenre('prancis')">Prancis</span>
+                    </p>
                 </div>
-            
             </div>
-            <div class="movie-card">
-                <div class="rating">
-                    ⭐ 6.2 <span>⏳ 119 min</span>
-                </div>
+        
+            <div class="movie-card" data-genre="horor indonesia">
+                <div class="rating">⭐ 6.2 <span>⏳ 119 min</span></div>
                 <img src="/assets/poster/SUMALA.jpg" alt="New Movie 8" onclick="goToStream('8')">
                 <div class="movie-info">
-                <h3 class="movie-title">SUMALA (2024)</h3>
-                <p class="genre">Horor, Indonesia</p>
+                    <h3 class="movie-title">SUMALA (2024)</h3>
+                    <p class="genre">
+                        <span onclick="filterByGenre('horor')">Horor</span>, 
+                        <span onclick="filterByGenre('indonesia')">Indonesia</span>
+                    </p>
                 </div>
             </div>
-            <div class="movie-card">
-                <div class="rating">
-                    ⭐ 6.2 <span>⏳ 119 min</span>
-                </div>
+        
+            <div class="movie-card" data-genre="horor indonesia">
+                <div class="rating">⭐ 6.2 <span>⏳ 119 min</span></div>
                 <img src="/assets/poster/Utusan iblis.jpg" alt="New Movie 9" onclick="goToStream('9')">
                 <div class="movie-info">
-                <h3 class="movie-title">Utusan Iblis (2025)</h3>
-                <p class="genre">Horor, Indonesia</p>
+                    <h3 class="movie-title">Utusan Iblis (2025)</h3>
+                    <p class="genre">
+                        <span onclick="filterByGenre('horor')">Horor</span>, 
+                        <span onclick="filterByGenre('indonesia')">Indonesia</span>
+                    </p>
                 </div>
-            </div>
-            <div class="movie-card">
-                <div class="rating">
-                    ⭐ 6.2 <span>⏳ 119 min</span>
-                </div>
-                <img src="path/to/new_movie10.jpg" alt="New Movie 10" onclick="goToStream('10')">
-                <div class="movie-info">
-                <h3 class="movie-title">New Movie 10</h3>
-                </div>
-            </div>
-            <div class="movie-card">
-                <div class="rating">
-                    ⭐ 6.2 <span>⏳ 119 min</span>
-                </div>
-                <img src="path/to/new_movie11.jpg" alt="New Movie 11" onclick="goToStream('11')">
-                <div class="movie-info">
-                <h3 class="movie-title">New Movie 11</h3>
-                </div>
-            </div>
-            <div class="movie-card">
-                <div class="rating">
-                    ⭐ 6.2 <span>⏳ 119 min</span>
-                </div>
-                <img src="path/to/new_movie12.jpg" alt="New Movie 12" onclick="goToStream('12')">
-                <div class="movie-info">
-                <h3 class="movie-title">New Movie 12</h3>
-                </div>
-            </div>
-            <div class="movie-card">
-                <div class="rating">
-                    ⭐ 6.2 <span>⏳ 119 min</span>
-                </div>
-                <img src="path/to/new_movie13.jpg" alt="New Movie 13" onclick="goToStream('13')">
-                <div class="movie-info">
-                <h3 class="movie-title">New Movie 13</h3>
-                </div>
-            </div>
-            <div class="movie-card">
-                <div class="rating">
-                    ⭐ 6.2 <span>⏳ 119 min</span>
-                </div>
-                <img src="path/to/new_movie14.jpg" alt="New Movie 14" onclick="goToStream('14')">
-                <div class="movie-info">
-                <h3 class="movie-title">New Movie 14</h3>
-                </div>  
-            </div>
-            <div class="movie-card">
-                <div class="rating">
-                    ⭐ 6.2 <span>⏳ 119 min</span>
-                </div>
-                <img src="path/to/new_movie15.jpg" alt="New Movie 15" onclick="goToStream('15')">
-                <div class="movie-info">
-                <h3 class="movie-title">New Movie 15</h3>
-                </div>
-            </div>
         </div>
     </section>
     <footer>
@@ -223,31 +193,37 @@
             <div>
                 <h3>Original Series</h3>
                 <ul>
-                    <li><a href="#">Apple TV+</a></li>
-                    <li><a href="#">Amazon</a></li>
-                    <li><a href="#">Disney+</a></li>
-                    <li><a href="#">HBO</a></li>
-                    <li><a href="#">Netflix</a></li>
-                    <li><a href="#">The CW</a></li>
+                    <li><a href="https://tv.apple.com/" target="_blank">Apple TV+</a></li>
+                    <li><a href="https://www.amazon.com/" target="_blank">Amazon</a></li>
+                    <li><a href="https://www.disneyplus.com/" target="_blank">Disney+</a></li>
+                    <li><a href="https://www.hbo.com/" target="_blank">HBO</a></li>
+                    <li><a href="https://www.netflix.com/" target="_blank">Netflix</a></li>
+                    <li><a href="https://www.cwtv.com/" target="_blank">The CW</a></li>
                 </ul>
             </div>
             <div>
                 <h3>Genre</h3>
                 <ul>
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Adventure</a></li>
-                    <li><a href="#">Animation</a></li>
-                    <li><a href="#">Horror</a></li>
+                    <li><a href="#" onclick="filterByGenre('Action')">Action</a></li>
+                    <li><a href="#" onclick="filterByGenre('Science Fiction')">Science Fiction</a></li>
+                    <li><a href="#" onclick="filterByGenre('Thriller')">Thriller</a></li>
+                    <li><a href="#" onclick="filterByGenre('Horror')">Horror</a></li>
+                    <li><a href="#" onclick="filterByGenre('Comedy')">Comedy</a></li>
+                    <li><a href="#" onclick="filterByGenre('Animation')">Animation</a></li>
+                    <li><a href="#" onclick="filterByGenre('Anak-Anak')">Anak-Anak</a></li>
+                    <li><a href="#" onclick="filterByGenre('Indonesia')">Indonesia</a></li>
+                    <li><a href="#" onclick="filterByGenre('USA')">USA</a></li>
+                    <li><a href="#" onclick="filterByGenre('Prancis')">Prancis</a></li>
                 </ul>
             </div>
             <div>
                 <h3>wattaFILM</h3>
                 <ul>
-                    <li><a href="#">DCEU Movie</a></li>
-                    <li><a href="#">MCU Movie</a></li>
-                    <li><a href="#">Disney+ Movie and Series</a></li>
-                    <li><a href="#">Netflix Movie and Series</a></li>
-                    <li><a href="#">Marvel Studios Series</a></li>
+                    <li><a href="https://www.dc.com/movies" target="_blank">DCEU Movie</a></li>
+                    <li><a href="https://www.marvel.com/movies" target="_blank">MCU Movie</a></li>
+                    <li><a href="https://www.disneyplus.com/" target="_blank">Disney+ Movie and Series</a></li>
+                    <li><a href="https://www.netflix.com/" target="_blank">Netflix Movie and Series</a></li>
+                    <li><a href="https://www.marvel.com/tv-shows" target="_blank">Marvel Studios Series</a></li>
                     <li><a href="#">Coming Soon</a></li>
                 </ul>
             </div>

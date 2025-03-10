@@ -269,48 +269,78 @@ nav a {
 
 /* Container utama */
 .stream-container {
-    max-width: 800px;
+    width: 80%;
     margin: 20px auto;
+    background: white;
     padding: 20px;
-    background-color: #333;
-    color: white;
     border-radius: 10px;
-    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Video player */
 #movie-player {
     width: 100%;
-    max-height: 450px;
-    border-radius: 10px;
+    max-width: 800px;
+    display: block;
+    margin: 10px auto;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Judul film */
-#movie-title {
-    margin-bottom: 10px;
+/* Judul Film */
+h2#movie-title {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 15px;
+}
+#movie-poster {
+    display: block;
+    width: 200px;
+    height: auto;
+    margin: 10px auto;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+/* Genre Film */
+#movie-genre {
+    font-size: 14px;
+    color: #777;
+    text-align: center;
+    margin-top: 5px;
+    font-style: italic;
 }
 
 /* Deskripsi film */
 #movie-description {
-    margin: 15px 0;
-    font-size: 14px;
-    color: #ccc;
+    font-size: 16px;
+    color: #444;
+    line-height: 1.5;
+    text-align: justify;
+    margin-top: 20px;
 }
 
 /* Tombol download */
 .download-buttons {
-    margin-top: 15px;
+    margin-top: 20px;
+    text-align: center;
+}
+.download-buttons h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
 }
 
 .download-btn {
     display: inline-block;
     margin: 5px;
-    padding: 10px 15px;
+    padding: 8px 15px;
     background-color: #e01a1a;
     color: white;
     text-decoration: none;
     border-radius: 5px;
     transition: 0.3s;
+    font-size: 14px;
 }
 
 .download-btn:hover {
@@ -366,4 +396,35 @@ hr {
     color: white;
     margin-right: 10px;
     text-decoration: none;
+}
+
+/* Styling untuk daftar genre */
+
+#genreList li {
+    color: white;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+/* Styling untuk genre dalam setiap movie-card */
+.movie-info .genre span {
+    color: white;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-right: 5px;
+}
+
+.movie-info .genre span:hover {
+    color: red;
+}
+
+.movie-poster {
+    width: 100%;
+    max-width: 300px; /* Ukuran poster lebih kecil */
+    display: block;
+    margin: 15px auto; /* Tengah dan beri jarak dari video */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efek bayangan agar lebih menarik */
 }
